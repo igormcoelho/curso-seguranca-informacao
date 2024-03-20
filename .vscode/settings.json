@@ -1,0 +1,38 @@
+{
+    "editor.formatOnSave": true,
+    "cmake.sourceDirectory": "${workspaceFolder}/.",
+    "cpplint.cpplintPath": "/usr/local/bin/cpplint",
+    "cpplint.root": "${workspaceFolder}/include",
+    "cpplint.repository": "${workspaceFolder}",
+    "clangd.arguments": [
+        "-log=verbose",
+        "-pretty",
+        "--background-index",
+        "--compile-commands-dir=${workspaceFolder}/build/",
+    ],
+    "testMate.cpp.test.advancedExecutables": [
+        {
+            //"pattern": "{bazel-bin}/**/*{test}*"
+            "pattern": "{build}/**/*{test}*"
+        }
+    ],
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/node_modules/**": true
+    },
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+    //"markdown-preview-enhanced.mathRenderingOption": "KaTeX",
+    "markdown-preview-enhanced.usePandocParser": true,
+    //"markdown-preview-enhanced.pandocMarkdownFlavor": "markdown-raw_tex+tex_math_single_backslash"
+    //"markdown-preview-enhanced.pandocArguments": "--standalone, --filter=pandoc-katex, --css=katex.min.css"    
+    "markdown-preview-enhanced.pandocArguments": [
+        "--standalone"
+    ],
+    //"markdown-preview-enhanced.enableScriptExecution": true,
+    "files.associations": {
+        "algorithm": "cpp",
+        "ostream": "cpp"
+    },
+    "markdown-preview-enhanced.mathRenderingOption": "MathJax",
+}
