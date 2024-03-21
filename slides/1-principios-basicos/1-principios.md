@@ -10,7 +10,7 @@ header-includes:
 - <link rel="stylesheet" type="text/css" href="reveal-beamer.css">
 ---
 
-# Segurança da Informação: Princípios Básicos
+# Aula: Princípios Básicos
 
 ------
 
