@@ -10,7 +10,7 @@ Lista completa de módulos no repositório:
 
 Materiais PDF-HTML:
 
-1. [Princípios Básicos](slides/1-principios/1-principios.md): [PDF](slides/1-principios/1-principios.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/1-principios/index.html)
+1. [Princípios Básicos](slides/1-principios-basicos/1-principios.md): [PDF](slides/1-principios-basicos/1-principios.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/1-principios-basicos/index.html)
    - Vídeos YouTube: [Introdução - Raphael Machado](https://www.youtube.com/watch?v=5j0PPYLbeyw) 
 
 
