@@ -190,6 +190,16 @@ debatida até o momento?
 - Como as equipes podem ser melhor treinadas e aprimoradas para esse cumprimento?
 - Recomendada leitura de material complementar (material acessível a executivos e público-geral): "SÊMOLA, Marcos. Gestão da Segurança da Informação, 2a Ed. Elsevier Brasil, 2014."
 
+------
+
+## Leia mais
+
+Livro: 
+
+- "Segurança de Computadores - Princípios e Práticas - 2012" - Stallings, William; Brown, Lawrie & Lawrie Brown & Mick Bauer & Michael Howard
+    * Em Português do Brasil, CAMPUS - GRUPO ELSEVIER, 2ª Ed. 2014
+
+Veja Capítulo 1, "Seção 1.1 - Conceitos de Segurança de Computadores".
 
 # Agradecimentos
 
