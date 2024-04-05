@@ -10,7 +10,7 @@ header-includes:
 - <link rel="stylesheet" type="text/css" href="reveal-beamer.css">
 ---
 
-# Aula: Princípios Básicos
+# Módulo: Princípios Básicos
 
 ------
 
@@ -178,6 +178,32 @@ Caraterística das informações que possuem valor legal dentro de um processo d
 
 [^1]: FIPS PUB 199
 
+------
+
+## CICLO DE VIDA DA INFORMAÇÃO (Parte 1/2)
+
+É fundamental ter atenção a todas as quatro etapas do ciclo de vida da informação: manuseio; armazenamento; transporte e descarte.
+
+### MANUSEIO
+
+Momento em que a informação é criada e manipulada, seja ao folhear um maço de papéis, ao digitar informações recém-geradas em uma aplicação Internet, ou ainda, ao utilizar sua senha de acesso para autenticação, por exemplo.
+
+### ARMAZENAMENTO
+
+Momento em que a informação é armazenada, seja em um banco de dados compartilhado, em uma anotação de papel posteriormente postada em um arquivo de ferro, ou ainda, em uma mídia de disquete/pendrive depositado na gaveta da mesa de trabalho, por exemplo
+
+------
+
+## CICLO DE VIDA DA INFORMAÇÃO (Parte 2/2)
+
+### TRANSPORTE
+
+Momento em que a informação é transportada, seja ao encaminhar informações por correio eletrônico (email), ao postar um documento via aparelho de fax, ou ainda, ao falar ao telefone uma informação confidencial, por exemplo
+
+### DESCARTE
+
+Momento em que a informação é descartada, seja ao depositar na lixeira da empresa um material impresso, seja ao eliminar um arquivo eletrônico em seu computador de mesa, ou ainda, ao descartar um CD/DVD usado que apresentou falha na leitura
+
 
 # Discussão
 
@@ -192,7 +218,26 @@ debatida até o momento?
 
 ------
 
-## Leia mais
+## Leia mais (parte 1/2)
+
+Os **conceitos básicos** estão apresentados no documento:
+
+- NIST FIPS PUB 199 (fev./2004)
+    * Standards for Security Categorization of Federal Information and Information Systems
+    * 13 páginas
+    * https://csrc.nist.gov/pubs/fips/199/final
+
+Mais referências, procurar no Handbook do NIST:
+
+- NIST Special Publication 800-12
+    *  An Introduction to Information Security  (out./1995)
+    * 101 páginas
+    * https://doi.org/10.6028/NIST.SP.800-12r1
+    * https://www.nist.gov/publications/introduction-computer-security-nist-handbook
+    * https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-12r1.pdf
+
+
+## Leia mais (parte 2/2)
 
 Livro: 
 
@@ -200,6 +245,7 @@ Livro:
     * Em Português do Brasil, CAMPUS - GRUPO ELSEVIER, 2ª Ed. 2014
 
 Veja Capítulo 1, "Seção 1.1 - Conceitos de Segurança de Computadores".
+
 
 # Agradecimentos
 

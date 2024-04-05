@@ -11,7 +11,8 @@ Lista completa de módulos no repositório:
 Materiais PDF-HTML:
 
 1. [Princípios Básicos](slides/1-principios-basicos/1-principios.md): [PDF](slides/1-principios-basicos/1-principios.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/1-principios-basicos/index.html)
-   - Vídeos YouTube: [Introdução - Raphael Machado](https://www.youtube.com/watch?v=5j0PPYLbeyw) 
+2. [Ameaças, Ataques e Ativos](slides/2-ameacas/2-ameacas.md): [PDF](slides/2-ameacas/2-ameacas.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/2-ameacas/index.html)
+3. [Requisitos e Arquitetura de Segurança](slides/3-requisitos/3-requisitos.md): [PDF](slides/3-requisitos/3-requisitos.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/3-requisitos/index.html)
 
 
 ***Observação:*** **alguns módulos só são oferecidos para cursos específicos.*
