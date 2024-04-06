@@ -48,115 +48,12 @@ As definições da X.800 são em cima da OSI (X.200)
 
 -------
 
-## Requisitos e barreiras de segurança
+## Requisitos de segurança
 
 Existem várias formas de classificar e caracterizar as contramedidas que podem ser usadas para reduzir vulnerabilidades e lidar com ameaças a ativos de sistema
 
 - Exploraremos a classificação da FIPS PUB 200 (*Minimum Security Requirements for Federal Information and Information Systems*) que enumera 17 áreas
 - Antes de adentrar na FIPS PUB 200, apresentamos algumas barreiras clássicas de segurança
-
--------
-
-## Barreiras Clássicas de Segurança
-
-![Slides Kowada](barreiras.png)
-
--------
-
-## Barreiras de Segurança (1/6)
-
-### 1. Desencorajar
-
-Esta é a primeira das cinco barreiras de segurança e
-cumpre o papel importante de desencorajar as ameaças.
-Estas, por sua vez, podem ser desmotivadas ou podem
-perder o interesse e o estímulo pela tentativa de quebra
-de segurança por efeito de mecanismos físicos,
-tecnológicos ou humanos. A simples presença de uma
-câmera de vídeo, mesmo falsa, de um aviso da
-existência de alarmes, campanhas de divulgação da
-política de segurança ou treinamento dos funcionários
-informando as práticas de auditoria e monitoramento de
-acesso aos sistemas, já são efetivos nesta fase.
-
--------
-
-## Barreiras de Segurança (2/6)
-
-### 2. Dificultar
-O papel desta barreira é complementar a anterior através
-da adoção efetiva dos controles que irão dificultar o
-acesso indevido. Como exemplo, podemos citar os
-dispositivos de autenticação para acesso físico, como
-roletas, detectores de metal e alarmes, ou lógicos,
-como leitores de cartão magnético, senhas, smartcards
-e certificados digitais, além da criptografia, firewall, etc.
-
--------
-
-## Barreiras de Segurança (3/6)
-
-### 3.  Discriminar
-Aqui o importante é se cercar de recursos que permitam
-identificar e gerir os acessos, definindo perfis e
-autorizando permissões. Os sistemas são largamente
-empregados para monitorar e estabelecer limites de
-acesso aos serviços de telefonia, perímetros físicos,
-aplicações de computadores e bancos de dados. Os
-processos de avaliação e gestão do volume de uso dos
-recursos, como e-mail, impressora, ou até mesmo o fluxo
-de acesso físico aos ambientes, são bons exemplos das
-atividades desta barreira.
-
--------
-
-## Barreiras de Segurança (4/6)
-
-### 4. Detectar
-Mais uma vez agindo de forma complementar às suas
-antecessoras, esta barreira deve munir a solução de
-segurança de dispositivos que sinalizem, alertem, e
-instrumentem os gestores da segurança na detecção de
-situações de risco. Seja em uma tentativa de invasão, uma
-possível contaminação por vírus, o descumprimento da
-política de segurança da empresa, ou a cópia e envio de
-informações sigilosas de forma inadequada. Entram aqui
-os sistemas de monitoramento e auditoria para auxiliar na
-identificação de atitudes de exposição, como o antivírus e
-o sistema de detecção de intrusos, que reduziram o tempo
-de resposta a incidentes.
-
--------
-
-## Barreiras de Segurança (5/6)
-
-### 5. Deter
-Representa o objetivo de impedir que a ameaça atinja os
-ativos que suportam o negócio. O acionamento desta
-barreira, ativando seus mecanismos de controle, é um
-sinal de que as barreiras anteriores não foram suficientes
-para conter a ação da ameaça. Neste momento, medidas
-de detenção, como ações administrativas, punitivas e
-bloqueio de acessos físicos e lógicos, respectivamente
-a ambientes e sistemas, são bons exemplos.
-
--------
-
-## Barreiras de Segurança (6/6)
-
-### 6. Diagnosticar
-Apesar de representar a última barreira no diagrama, esta
-fase tem um sentido especial de representar a
-continuidade do processo de gestão de segurança da
-informação. Pode parecer o fim, mas é o elo de ligação
-com a primeira barreira, criando um movimento cíclico e
-contínuo. Devido a esses fatores esta é a barreira de
-maior importância. Deve ser conduzida por atividades de
-análise de riscos que considerem tanto os aspectos
-tecnológicos quanto os físicos e humanos, sempre
-orientados às características e às necessidades
-específicas dos processos de negócio de uma empresa.
-
 
 ------
 
@@ -385,11 +282,205 @@ que se quer proteger.
 - Arquitetura de segurança para OSI (X.200)
 - Maneira sistemática de definir requisitos de segurança e caracterizar abordagens para
 satisfazê-los
-- Define:
-   * ataques de segurança - comprometimentos de segurança
+- Define três atividades principais:
+   * gestão da segurança/ataques de segurança - comprometimentos de segurança
    * mecanismo de segurança - agir para detectar, prevenir, recuperar do ataque
    * serviço de segurança - contra-ataques de segurança
 - Leia na norma suas 6 categorias e 14 serviços específicos
+   * Serviços de Segurança (categorias): Autenticação, Controle de acesso, Confidencialidade de dados, Disponibilidade,
+   Integridade de dados, Irretratabilidade
+
+-----
+
+## Serviços de Segurança: Autenticação
+
+Garantia de que a entidade comunicante é aquela que declara ser.
+
+### Autenticação de entidades parceiras
+Usada em associação com uma conexão lógica para prover
+confiabilidade a respeito da identidade das entidades conectadas.
+
+### Autenticação da origem dos dados
+Em uma transferência sem conexão, assegura que a origem dos
+dados recebidos é quem ela afirma ser.
+
+-----
+
+## Serviços de Segurança: Controle de acesso
+
+Prevenção de utilização não autorizada de um ativo (isto é, esse
+serviço controla quem pode ter acesso a um ativo, sob quais
+condições o acesso pode ocorrer e o que tem permissão de fazer
+quem os está acessando).
+
+-----
+
+## Serviços de Segurança: Confidencialidade de dados
+
+Proteção de dados contra revelação não autorizada.
+
+### Confidencialidade de conexão
+Proteção de todos os dados de usuário em uma conexão.
+
+### Confidencialidade sem conexão
+Proteção de todos os dados de usuário em um bloco de dados
+isolado.
+
+### Confidencialidade de campo seletivo
+Confidencialidade de campos selecionados dentro dos dados de
+usuário em uma conexão ou em um bloco de dados isolado.
+
+### Confidencialidade do fluxo de tráfego
+Proteção de informações que poderiam ser derivadas da observação
+de fluxos de tráfego.
+
+-----
+
+## Serviços de Segurança: Disponibilidade
+
+Assegura que não há qualquer recusa de acesso autorizado a
+elementos de rede, informações armazenadas, fluxos de informação,
+serviços e aplicações em razão de eventos que causam impacto à
+rede. Soluções para recuperação de desastre estão incluídas nessa
+categoria.
+
+-----
+
+## Serviços de Segurança: Integridade de Dados (Parte 1/2)
+
+Garantia de que dados recebidos estão exatamente como enviados
+por uma entidade autorizada (isto é, não contêm qualquer
+modificação, inserção, deleção ou repetição).
+
+### Integridade de conexão com recuperação
+Provê a integridade de todos os dados de usuários em uma conexão
+e detecta qualquer modificação, inserção, deleção ou repetição de
+quaisquer dados dentro de uma sequência de dados inteira, com
+tentativa de recuperação de tal ação detectada.
+
+### Integridade de conexão sem recuperação
+Como acima, mas provê apenas detecção sem recuperação.
+
+-----
+
+## Serviços de Segurança: Integridade de Dados (Parte 2/2)
+
+### Integridade de conexão de campo seletivo
+Provê a integridade de campos selecionados dentro dos dados de
+usuário de um bloco de dados transmitido por uma conexão,
+determinando se os campos selecionados foram modificados,
+inseridos, eliminados ou reproduzidos.
+
+### Integridade sem conexão
+Provê integridade a um bloco de dados isolado, sem conexão,
+podendo tomar a forma de detecção de modificações de dados.
+Além disso, uma forma limitada de detecção de repetição pode ser
+oferecida.
+
+### Integridade de campo seletivo sem conexão
+Provê integridade a campos selecionados dentro de um bloco de
+dados isolado sem conexão, determinando se os campos
+selecionados foram modificados.
+
+-----
+
+## Serviços de Segurança: Irretratabilidade
+
+Provê proteção contra a negativa, por uma das entidades envolvidas
+em uma comunicação, de ter participado em toda a comunicação ou
+em parte dela.
+
+### Irretratabilidade, origem
+Prova que a mensagem foi enviada pela parte especificada.
+
+### Irretratabilidade, destino
+Prova que a mensagem foi recebida pela parte especificada.
+
+-----
+
+## Mecanismos de Segurança: Específicos (Parte 1/3)
+
+São previstos diversos mecanismos de segurança na X.800,
+que podem ser **específicos** ou **disseminados**.
+
+Os **específicos** podem ser incorporados à camada de protocolo adequada de modo a
+prover alguns dos serviços de segurança OSI.
+
+### Criptografar
+Utilização de algoritmos matemáticos para transformar dados em
+uma forma que não é facilmente inteligível. A transformação e a
+subsequente recuperação dos dados dependem de um algoritmo e de
+zero ou mais chaves criptográficas.
+
+### Assinatura digital
+Dados anexados a uma unidade de dados ou transformação
+criptográfica de uma unidade de dados que permita que um receptor
+da unidade de dados prove a origem e a integridade da unidade de
+dados e se proteja contra falsificação (por exemplo, pelo receptor).
+
+-----
+
+## Mecanismos de Segurança: Específicos (Parte 2/3)
+
+### Controle de acesso
+Uma variedade de mecanismos que garantem o respeito aos direitos
+de acesso a ativos.
+
+### Integridade de dados
+Uma variedade de mecanismos usados para garantir a integridade de
+uma unidade de dados ou de um fluxo de unidades de dados.
+
+### Troca de autenticações
+Mecanismo cujo intuito é assegurar a identidade de uma entidade
+por meio de troca de informações.
+
+-----
+
+## Mecanismos de Segurança: Específicos (Parte 3/3)
+
+### Preenchimento de tráfego
+Inserção de bits em espaços vazios em um fluxo de dados para
+frustrar tentativas de análise de tráfego.
+
+### Controle de roteamento
+Permite a seleção de determinadas rotas fisicamente seguras para
+certos dados e alterações de roteamento, especialmente quando há
+suspeita de falha de segurança.
+
+### Notarização
+Utilização de uma terceira parte confiável para garantir certas
+propriedades de uma troca de dados.
+
+-----
+
+## Mecanismos de Segurança: Disseminados (Parte 1/2)
+
+Os **disseminados** são mecanismos que não são específicos de qualquer serviço de
+segurança OSI ou camada de protocolo em particular.
+
+### Funcionalidade confiável
+A que é percebida como correta em relação a alguns critérios (por
+exemplo, conforme estabelecido por uma política de segurança).
+
+### Rótulo de segurança
+Marcação ligada a um ativo (que pode ser uma unidade de dados)
+que nomeia ou designa os atributos de segurança daquele ativo.
+
+-----
+
+## Mecanismos de Segurança: Disseminados (Parte 2/2)
+
+### Detecção de evento
+Detecção de eventos relevantes do ponto de vista da segurança.
+
+### Trilha de auditoria de segurança
+Dados coletados e potencialmente usados para facilitar uma
+auditoria de segurança, que é uma revisão e um exame
+independentes dos registros e atividades do sistema.
+
+### Recuperação de segurança
+Trata de requisições feitas por mecanismos, como tratamento de
+eventos e funções gerenciais, e executa ações de recuperação.
 
 -----
 

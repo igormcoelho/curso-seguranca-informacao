@@ -243,6 +243,109 @@ Consideramos quatro tipos de ativos com exemplos de ameaça:
 ![Livro Stallings (Seção 1.2)](stallings-escopo.png)
 
 
+-------
+
+
+## Barreiras Clássicas de Segurança
+
+![Slides Kowada](barreiras.png)
+
+-------
+
+## Barreiras de Segurança (1/6)
+
+### 1. Desencorajar
+
+Esta é a primeira das cinco barreiras de segurança e
+cumpre o papel importante de desencorajar as ameaças.
+Estas, por sua vez, podem ser desmotivadas ou podem
+perder o interesse e o estímulo pela tentativa de quebra
+de segurança por efeito de mecanismos físicos,
+tecnológicos ou humanos. A simples presença de uma
+câmera de vídeo, mesmo falsa, de um aviso da
+existência de alarmes, campanhas de divulgação da
+política de segurança ou treinamento dos funcionários
+informando as práticas de auditoria e monitoramento de
+acesso aos sistemas, já são efetivos nesta fase.
+
+-------
+
+## Barreiras de Segurança (2/6)
+
+### 2. Dificultar
+O papel desta barreira é complementar a anterior através
+da adoção efetiva dos controles que irão dificultar o
+acesso indevido. Como exemplo, podemos citar os
+dispositivos de autenticação para acesso físico, como
+roletas, detectores de metal e alarmes, ou lógicos,
+como leitores de cartão magnético, senhas, smartcards
+e certificados digitais, além da criptografia, firewall, etc.
+
+-------
+
+## Barreiras de Segurança (3/6)
+
+### 3.  Discriminar
+Aqui o importante é se cercar de recursos que permitam
+identificar e gerir os acessos, definindo perfis e
+autorizando permissões. Os sistemas são largamente
+empregados para monitorar e estabelecer limites de
+acesso aos serviços de telefonia, perímetros físicos,
+aplicações de computadores e bancos de dados. Os
+processos de avaliação e gestão do volume de uso dos
+recursos, como e-mail, impressora, ou até mesmo o fluxo
+de acesso físico aos ambientes, são bons exemplos das
+atividades desta barreira.
+
+-------
+
+## Barreiras de Segurança (4/6)
+
+### 4. Detectar
+Mais uma vez agindo de forma complementar às suas
+antecessoras, esta barreira deve munir a solução de
+segurança de dispositivos que sinalizem, alertem, e
+instrumentem os gestores da segurança na detecção de
+situações de risco. Seja em uma tentativa de invasão, uma
+possível contaminação por vírus, o descumprimento da
+política de segurança da empresa, ou a cópia e envio de
+informações sigilosas de forma inadequada. Entram aqui
+os sistemas de monitoramento e auditoria para auxiliar na
+identificação de atitudes de exposição, como o antivírus e
+o sistema de detecção de intrusos, que reduziram o tempo
+de resposta a incidentes.
+
+-------
+
+## Barreiras de Segurança (5/6)
+
+### 5. Deter
+Representa o objetivo de impedir que a ameaça atinja os
+ativos que suportam o negócio. O acionamento desta
+barreira, ativando seus mecanismos de controle, é um
+sinal de que as barreiras anteriores não foram suficientes
+para conter a ação da ameaça. Neste momento, medidas
+de detenção, como ações administrativas, punitivas e
+bloqueio de acessos físicos e lógicos, respectivamente
+a ambientes e sistemas, são bons exemplos.
+
+-------
+
+## Barreiras de Segurança (6/6)
+
+### 6. Diagnosticar
+Apesar de representar a última barreira no diagrama, esta
+fase tem um sentido especial de representar a
+continuidade do processo de gestão de segurança da
+informação. Pode parecer o fim, mas é o elo de ligação
+com a primeira barreira, criando um movimento cíclico e
+contínuo. Devido a esses fatores esta é a barreira de
+maior importância. Deve ser conduzida por atividades de
+análise de riscos que considerem tanto os aspectos
+tecnológicos quanto os físicos e humanos, sempre
+orientados às características e às necessidades
+específicas dos processos de negócio de uma empresa.
+
 
 -------
 
@@ -256,10 +359,6 @@ Consideramos quatro tipos de ativos com exemplos de ameaça:
    * incapacitação, corrupção, obstrução
 - Usurpação
    * apropriação indevida, uso indevido
-
--------
-
-
 
 
 # Discussão
