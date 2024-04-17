@@ -15,6 +15,7 @@ Materiais PDF-HTML:
 3. [Requisitos e Arquitetura de Segurança](slides/3-requisitos/3-requisitos.md): [PDF](slides/3-requisitos/3-requisitos.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/3-requisitos/index.html)
 4. [Malware e Vírus](slides/4-virus/4-virus.md): [PDF](slides/4-virus/4-virus.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/4-virus/index.html)
 5. [Propagação por Vulnerabilidades e Vermes](slides/5-worm/5-worm.md): [PDF](slides/5-worm/5-worm.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/5-worm/index.html)
+6. [Propagação de Malware por Engenharia Social e Carga Útil](slides/6-social/6-social.md): [PDF](slides/6-social/6-social.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/6-social/index.html)
 
 
 ***Observação:*** **alguns módulos só são oferecidos para cursos específicos.*
