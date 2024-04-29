@@ -33,6 +33,7 @@ São requisitos para essa aula o conhecimento de:
 
 - Negação de Serviço
 - DoS e DDoS
+- Módulo pode ser dividido em duas aulas
 - Dividido em três partes:
    * Introdução
    * Ataques Principais
@@ -501,6 +502,18 @@ função do número de conexões
 completude do cabeçalho da solicitação HTTP
       - Uma solicitação HTTP não será enviada ao servidor até que
 a terminação do cabeçalho seja enviada pelo cliente
+
+-------
+
+## Melhorias do HTTP
+
+- O HTTP tem buscado melhorias ao longo dos anos, o que pode trazer novos ataques
+- HTTP/1.1 criado em 1997 (HTTP/0.9 de 1991 e HTTP/1.0 de 1996 são obsoletos)
+- HTTP/2 criado em 2015
+   * Ataque de DoS em janelas de continuação (03 de abril de 2024): https://kb.cert.org/vuls/id/421644
+   * Veja mais: https://en.wikipedia.org/wiki/HTTP/2
+- HTTP/3 criado em 2022
+   * Veja mais: https://en.wikipedia.org/wiki/HTTP/3
 
 -------
 
