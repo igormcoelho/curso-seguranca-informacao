@@ -18,7 +18,7 @@ Materiais PDF-HTML:
 6. [Propagação de Malware por Engenharia Social e Carga Útil](slides/6-social/6-social.md): [PDF](slides/6-social/6-social.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/6-social/index.html)
 7. [Contramedidas para Malware](slides/7-contramedidas/7-contramedidas.md): [PDF](slides/7-contramedidas/7-contramedidas.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/7-contramedidas/index.html)
 8. [Negação de Serviço](slides/8-negacao-servico/8-negacao-servico.md): [PDF](slides/8-negacao-servico/8-negacao-servico.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/8-negacao-servico/index.html)
-
+9. [Criptografia](slides/9-criptografia/9-criptografia.md): [PDF](slides/9-criptografia/9-criptografia.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/9-criptografia/index.html)
 
 
 ***Observação:*** **alguns módulos só são oferecidos para cursos específicos.*
