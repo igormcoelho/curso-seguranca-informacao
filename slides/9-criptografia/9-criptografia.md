@@ -2,7 +2,7 @@
 author: Igor Machado Coelho
 title: Segurança da Informação
 subtitle: Fundamentos de Criptografia
-date: 10/06/2024
+date: 10/06/2024--19/06/2024
 transition: cube
 fontsize: 10
 header-includes:
@@ -218,6 +218,70 @@ Standard (DES), o Triple DES (DES triplo) e o Advanced Encryption Standard
 
 ![Retirado do livro-texto](cifra-bloco.png)
 
+## Cifra de Feistel
+
+- A Cifra de Feistel ou Rede de Feistel (também chamada de "Luby--Rackoff block cipher" que a criptoanalisaram) é utilizada em projetos bem-sucedidos de criptografia simétrica, como o DES 
+- Criada por Horst Feistel da IBM em 1973
+- Entrada de cifração é um bloco de texto às claras de $2w$ bits de comprimento e uma chave
+$K$
+- Bloco de texto às claras é dividido em duas metades, L0 e R0
+- Duas metades passam por $n$ rodadas de processamento
+- Cada rodada $i$ utiliza dados $L_{i-1}$ e $R_{i-1}$
+- Chaves $K_i$ são derivadas da chave $K$, para cada rodada
+- A cada rodada, dados dos lados esquerdo e direito (L e R) se invertem
+- Decifração usa mesmo algoritmo, porém chaves $K_i$ em ordem inversa
+- Função F não precisa ser inversível, mas a rede sempre será
+- Veja mais: https://en.wikipedia.org/wiki/Feistel_cipher
+
+## Ilustração da Cifra de Feistel
+
+![Cifra de Feistel - Wikipedia](cifra-feistel.png){height=90%}
+
+## Parâmetros da Cifra de Feistel (Parte 1/2)
+
+### Tamanho do bloco 
+Blocos de tamanhos maiores significam maior
+segurança (se todos os outros parâmetros/aspectos forem iguais), mas
+velocidade de cifração/decifração reduzida. Um tamanho de bloco de 128
+bits é um compromisso razoável quase universal em projetos recentes de
+cifra de bloco.
+
+### Tamanho da chave
+Chaves de tamanhos maiores significam maior
+segurança, mas podem reduzir a velocidade de cifração/decifração. O
+comprimento de chave mais comum em algoritmos modernos é 128 bits.
+
+### Número de rodadas
+A essência de uma cifra de bloco simétrica é que uma
+única rodada oferece segurança inadequada, mas várias rodadas oferecem
+segurança crescente. Um número típico é 16 rodadas.
+
+## Parâmetros da Cifra de Feistel (Parte 2/2)
+
+### Algoritmo de geração de subchaves
+Maior complexidade nesse algoritmo
+deve resultar em maior dificuldade de criptoanálise.
+
+### Função de rodada
+Novamente, maior complexidade geralmente significa
+maior resistência à criptoanálise.
+
+## Considerações de Projeto de uma Cifra de Feistel
+
+### Software de cifração/decifração rápida
+Em muitos casos, mecanismos de
+cifração são embutidos em aplicações ou funções utilitárias de modo tal que
+não é possível a implementação em hardware. Dessa maneira, a velocidade
+de execução do algoritmo torna-se uma preocupação.
+
+### Facilidade de análise
+Embora queiramos que o nosso algoritmo seja o mais
+difícil possível de criptoanalisar, há grande benefício se o algoritmo for fácil
+de analisar. Isto é, se o algoritmo puder ser explicado com concisão e clareza,
+é mais fácil analisá-lo em relação a vulnerabilidades criptoanalíticas e, por
+conseguinte, desenvolver um nível mais alto de garantias em relação a sua
+força. O DES, por exemplo, não tem funcionalidade fácil de analisar.
+
 ## Data encryption standard (DES) - História
 
 - O esquema de cifração mais amplamente usado é baseado no Data Encryption
@@ -229,6 +293,31 @@ Nacional de Padrões), agora National Institute of Standards and Technology
 - O DES toma como entrada um bloco de texto às claras de 64 bits e uma chave de 56 bits, para produzir um bloco de texto cifrado de 64 bits.
 - NIST retira em 2005 o FIPS 46-3: https://pt.wikipedia.org/wiki/Data_Encryption_Standard
 - Em 2007, máquina paralela de FPGA da Universidade de Bochum e Kiel, Alemanha, viola o DES em aproximadamente seis dias e meio por um custo de $10,000 em hardware
+
+## Funcionamento do DES
+
+- O DES funciona como uma Cifra de Feistel
+- São utilizados n=16 rodadas (próximo slide)
+- O bloco tem 64 bits (então meio bloco tem 32 bits)
+- A chave K tem 64 bits, onde apenas 56 bits são efetivamente utilizados
+- O mesmo algoritmo cifra e decifra, apenas bastando inverter a ordem das subchaves
+- A função F tem quatro fases (próximos slides): Expansion (E-Expansion) (32 bits viram 48 bits), Key mixing, Substitution (S-Boxes), Permutation (P-Box) (de volta para 32 bits)
+- Conceito de "confusion and diffusion" de Claude Shannon em 1940, na E-expansion e S-Boxes/P-Box dão garantia de segurança
+- Key Schedule (próximos slides) divide os 56 bits da chave em duas partes de 28 bits (fase PC-1), depois rotacionados individualmente, e agregados novamente (fase PC-2) para gerar subchave de 48 bits
+- Veja: https://en.wikipedia.org/wiki/Data_Encryption_Standard
+
+## Ilustração da Estrutura Feistel do DES
+
+![Wikipedia](feistel-des.png){height=90%}
+
+## Ilustração da Função F do DES
+
+![Wikipedia](f-des.png){height=80%}
+
+## Ilustração do Key Schedule do DES
+
+![Wikipedia](key-des.png){height=80%}
+
 
 ## DES - Preocupações (História)
 
@@ -694,7 +783,35 @@ calculando novamente H(F). Um intruso precisaria mudar F sem mudar H(F). Essa ap
 
 ![Slides Kowada](rodada-sha-512.png){width=70%}
 
+## OUTRAS FUNÇÕES DE HASH SEGURAS
 
+- Mais baseado no projeto de funções de hash iteradas
+    * Se a função de compressão for resistente à colisão...
+    * ...então é função de hash iterada resultante também é
+- MD5 (RFC1321)
+    * Foi um hash amplamente utilizado desenvolvido por Ron Rivest
+    * Produz hash de 128 bits, agora muito pequeno
+    * Também tem preocupações criptoanalíticas
+- Whirlpool (hash endossado pela NESSIE)
+    * Desenvolvido por Vincent Rijmen e Paulo Barreto
+    * Função de compressão é derivada do AES
+    * Produz hash de 512 bits
+
+# Criptografia de Chave Pública
+
+## Estrutura de criptografia de chave pública
+
+- Criptografia de chave pública: primeiro avanço verdadeiramente revolucionário na criptografia em milhares de anos literalmente
+- Criptografia de chave pública proposta publicamente pela primeira vez por Diffie e Hellman em 1976 
+    * Nota 1: agora sabe-se que Williamson (CESG/UK) propôs secretamente o conceito em 1969
+    * Nota 2: patente US 4,200,77 expirada credita Hellman, Diffie e Ralph Merkle como inventores
+    * Nota 3: em 2006, Hellman sugeriu que o nome fosse modificado para "Diffie-Hellman-Merkle key exchange" em homenagem às contribuições de Ralph Merkle ao projeto
+- Método prático para trocar uma chave secreta
+- Usado em vários produtos comerciais
+- Segurança depende da dificuldade de calcular logaritmos discretos
+
+
+# Assinaturas Digitais
 
 # Aleatoriedade
    
@@ -800,9 +917,7 @@ hardware barato. O sistema usa um dispositivo de carga acoplada saturado
 (CDD) dentro de uma lata hermeticamente fechada (à prova de luz) como fonte
 caótica para produzir aleatoriedade
 
-# Criptografia de Chave Pública
 
-# Assinaturas Digitais
 
 
 # Localização de Cifração Simétrica e Distribuição de Chaves
