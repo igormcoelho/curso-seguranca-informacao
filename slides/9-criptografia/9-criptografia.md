@@ -401,7 +401,7 @@ chamada de propostas para um novo Advanced Encryption Standard (AES)
 - Cifra de bloco simétrica com comprimento de bloco
 de 128 bits e suporte para comprimentos de chaves de 128, 192 e 256 bits
 - Critérios de avaliação incluíam: segurança, eficiência computacional, requisitos
-de memória, adequabilidade de hardware e software e flexibilidade
+de memória, adequabilidade de hardware e software e flexibilidade 
 - Primeira rodada de avaliação, 15 algoritmos propostos foram aceitos
 - Segunda rodada reduziu esse número a cinco algoritmos
 - O NIST concluiu
@@ -409,7 +409,36 @@ seu processo de avaliação e publicou um padrão final (FIPS PUB 197) em
 novembro de 2001 e selecionou o algoritmo de Rijndael como o algoritmo AES
 proposto: autores belgas Vincent Rijmen e Joan Daemen
 -  Agora esse algoritmo está amplamente disponível em produtos
-comerciais.
+comerciais
+
+## Ideia Geral do AES
+
+- No AES, não é utilizada uma Rede de Feistel
+- Implementação complexa com uso de permutações e substituições
+- Entrada para algoritmos de cifração e decifração é um bloco de 128 bits
+- No FIPS PUB 197, bloco representado por matriz quadrada de bytes
+   * O bloco é copiado para o vetor **Estado**, que é modificado a cada estágio de cifração ou decifração 
+   * Após o estágio final, **Estado** é copiado para uma matriz de saída
+- Chave de 128 bits representada como matriz quadrada de bytes
+   * chave é expandida para um vetor de palavras de escalonamento de chave
+   * cada palavra tem 4 bytes
+   * escalonamento total de chaves tem 44 palavras para a chave de 128 bits
+- A ordenação dos bytes dentro de uma matriz é feita por colunas
+- Primeiros 4 bytes de uma entrada de texto às claras de 128 bits passada para a cifra criptográfica
+ocupam a primeira coluna da matriz **entrada**
+   * segundos 4 bytes ocupam a segunda coluna, e assim por diante
+- Primeiros 4 bytes da chave expandida, que formam uma palavra, ocupam a primeira coluna da
+matriz **w**
+
+
+## Estrutura Geral do AES (não usa Feistel)
+
+![Slides Kowada](estrutura-aes.png)
+
+## Estrutura Geral da Rodada do AES
+
+![Slides Kowada](rodada-aes.png){height=90%}
+
 
 # Modos de Operação e Cifras de Bloco vs Fluxo
 
@@ -748,6 +777,7 @@ Federal de Processamento de Informações (FIPS 180) em 1993 (conhecida como SHA
 - Em 2012, padronização do Keccak como SHA-3
 - Veja: https://en.wikipedia.org/wiki/Secure_Hash_Algorithms
 
+
 ## Outras aplicações de funções de hash
 
 ### Senhas
@@ -783,6 +813,38 @@ calculando novamente H(F). Um intruso precisaria mudar F sem mudar H(F). Essa ap
 
 ![Slides Kowada](rodada-sha-512.png){width=70%}
 
+## HMAC para autenticação
+
+- O hash SHA-1 não é adequado para MAC, dado que não possui chave de entrada K
+- Diversas adaptações de algoritmos de hash com chave foram feitas, sendo a mais popular é o HMAC
+- O HMAC (Hash-based Message Authentication Code) ou código de autenticação de mensagem baseado em hash, publicado na RFC 2104
+- Funciona com função de hash subjacente e é comprovadamente seguro!
+   * Dado que a função de hash também seja segura
+- O HMAC trata a função de hash como uma "caixa-preta", o que tem dois benefícios
+   * a implementação existente de uma função de hash pode ser usada como um módulo na implementação do HMAC
+   * caso seja necessário substituir uma função de hash dada em uma implementação de HMAC, basta remover o módulo de função de hash existente e instalar o novo módulo
+- Escolhido HMAC para implementação no IP Security (IPSec)
+- Algoritmo em poucas etapas (veja próximos slides)
+
+## HMAC - terminologia
+
+- H = função de hash subjacente (p. ex., SHA)
+- n = comprimento do código de hash produzido pela função de hash H
+- M = mensagem passada como entrada para o HMAC (incluindo o preenchimento especificado na função de hash subjacente)
+- L = número de blocos em M
+- $Y_i$ = i-ésimo bloco de M, $0 \leq i \leq (L - 1)$
+- b = número de bits em um bloco
+- K = chave secreta; se o comprimento da chave for maior que b, a chave é
+passada como entrada para a função de hash para produzir uma chave de $n$
+bits; o comprimento recomendado é $\geq n$
+- $K^+$ = K preenchida com zeros à esquerda de modo que o resultado tenha b bits de comprimento
+- ipad = 00110110 (36 em hexadecimal) repetido b/8 vezes
+- opad = 01011100 (5C em hexadecimal) repetido b/8 vezes
+
+## Ilustração do HMAC
+
+![Livro-texto](ilustracao-hmac.png){height=90%}
+
 ## OUTRAS FUNÇÕES DE HASH SEGURAS
 
 - Mais baseado no projeto de funções de hash iteradas
@@ -809,6 +871,7 @@ calculando novamente H(F). Um intruso precisaria mudar F sem mudar H(F). Essa ap
 - Método prático para trocar uma chave secreta
 - Usado em vários produtos comerciais
 - Segurança depende da dificuldade de calcular logaritmos discretos
+
 
 
 # Assinaturas Digitais
