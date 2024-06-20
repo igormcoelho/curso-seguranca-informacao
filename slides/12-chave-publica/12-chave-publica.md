@@ -180,6 +180,7 @@ custos de processamento
 ![Livro-Texto](certificado-chave-publica.png)
 
 
+# Localização da Cifração e Distribuição de Chaves
 
 ## Cifração de Enlace
 
@@ -192,6 +193,47 @@ custos de processamento
 ## Ilustração da Cifração de Enlace
 
 ![Slides Kowada](cifracao-enlace.png)
+
+## Distribuição de Chaves
+
+- Para a cifração simétrica funcionar, as duas partes participando de uma troca
+devem compartilhar a mesma chave, e essa chave deve ser protegida contra
+acesso de outros
+- Desejável mudar frequentemente as
+chaves para limitar a quantidade de dados comprometida se um atacante
+descobrir qual é a chave
+- A força de qualquer sistema criptográfico depende da técnica de distribuição de chaves
+
+- Há vários modos de distribuição de chaves. Para duas
+partes A e B:
+   1. A chave poderia ser selecionada por A e entregue fisicamente a B.
+   2. Um terceiro poderia selecionar a chave e entregá-la fisicamente a A e a B.
+   3. Se A e B usaram uma chave antes e recentemente, uma parte poderia
+transmitir a nova chave à outra, cifrando a nova chave com a chave antiga.
+   4. Se A e B tiverem cada um uma conexão cifrada com um terceiro, C, C poderia entregar uma chave a A e a B pelos enlaces cifrados.
+
+## Opções de Distribuição de Chaves
+
+- Opções 1 e 2 se referem a entregas manuais
+- Opção 3 funciona dado que alguma chave exista, mas expõe a risco de perda de todas chaves futuras, quando alguma anterior for revelada
+- Opção 4 é preferível, mas exige dois novos conceitos: Chave de Sessão e Chave Permanente. Também é necessária a introdução de *Key Distribution Center* -- KDC e Serviço de Segurança -- SSM.
+
+###  Chave de sessão
+
+Quando dois sistemas finais (estações, terminais etc.)
+desejam se comunicar, eles estabelecem uma conexão (p. ex., circuito
+virtual). Enquanto essa conexão lógica perdurar, todos os dados de usuário
+são cifrados com uma chave de sessão usada uma única vez. Na finalização
+da sessão, ou conexão, a chave de sessão é destruída.
+
+### Chave permanente
+
+Uma chave permanente é uma chave usada entre
+entidades com a finalidade de distribuir chaves de sessão.
+
+## Diagrama KDC e SSM
+
+![Livro-texto](kdc-ssm.png)
 
 
 # Discussão
