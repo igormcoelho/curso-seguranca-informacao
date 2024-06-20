@@ -426,14 +426,14 @@ font-size: 1em;
 
 <section id="title-slide">
   <h1 class="title">Segurança da Informação</h1>
-  <p class="subtitle">Modos de Operação para Cifras Criptográficas</p>
+  <p class="subtitle">Modos de Operação e Aleatoriedade</p>
   <p class="author">Igor Machado Coelho</p>
   <p class="date">10/06/2024–19/06/2024</p>
 </section>
 
 <section>
-<section id="módulo-modos-de-operação-para-cifras-criptográficas" class="title-slide slide level1">
-<h1>Módulo: Modos de Operação para Cifras Criptográficas</h1>
+<section id="módulo-modos-de-operação-e-aleatoriedade" class="title-slide slide level1">
+<h1>Módulo: Modos de Operação e Aleatoriedade</h1>
 
 </section>
 <section id="pré-requisitos" class="slide level2">
@@ -769,6 +769,164 @@ correspondente.</li>
 </ul></li>
 <li>Leia mais em:
 https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation</li>
+</ul>
+</section></section>
+<section>
+<section id="aleatoriedade" class="title-slide slide level1">
+<h1>Aleatoriedade</h1>
+
+</section>
+<section id="números-aleatórios-e-pseudoaleatórios" class="slide level2">
+<h2>Números aleatórios e pseudoaleatórios</h2>
+<ul>
+<li>Números aleatórios desempenham importante papel na utilização de
+criptografia para várias aplicações de segurança de rede</li>
+<li>Geração de chaves para o algoritmo criptográfico</li>
+<li>Geração de um fluxo de chaves para uma cifra de fluxo simétrica</li>
+<li>Geração de uma chave simétrica para uso como chave de sessão
+temporária ou na criação de um envelope digital (a ver)</li>
+<li>Essas aplicações dão origem a dois requisitos distintos e não
+necessariamente compatíveis para uma sequência de números aleatórios:
+<strong>aleatoriedade</strong> e <strong>imprevisibilidade</strong></li>
+</ul>
+</section>
+<section id="aleatoriedade-1" class="slide level2">
+<h2>Aleatoriedade</h2>
+<ul>
+<li>Tradicionalmente, a preocupação na geração de uma sequência de
+números alegadamente aleatórios é que a sequência de números seja
+aleatória em algum sentido estatístico bem definido.</li>
+<li>Dois critérios são usados para validar que uma sequência de números
+é aleatória: <strong>distribuição uniforme</strong> e
+<strong>independência</strong></li>
+<li>No contexto da nossa discussão, a utilização de uma sequência de
+números que <em>parecem estatisticamente aleatórios</em> ocorre
+frequentemente no projeto de algoritmos relacionados à criptografia</li>
+</ul>
+<h3 id="distribuição-uniforme">Distribuição uniforme</h3>
+<p>A distribuição de números na sequência deve ser uniforme, isto é, a
+frequência de ocorrência de cada um dos números deve ser aproximadamente
+a mesma.</p>
+<h3 id="independência">Independência</h3>
+<p>Nenhum valor na sequência pode ser inferido dos outros.</p>
+</section>
+<section id="desafios-práticos-de-aleatoriedade" class="slide level2">
+<h2>Desafios Práticos de Aleatoriedade</h2>
+<ul>
+<li>Existem testes bem definidos para determinar se uma sequência de
+números corresponde a uma distribuição particular, como a distribuição
+uniforme, mas não há teste para “provar” independência
+<ul>
+<li>Em vez disso, diversos testes podem ser aplicados para demonstrar se
+a sequência <strong>não</strong> exibe independência</li>
+<li>A estratégia geral é aplicar vários desses testes até que a
+confiança na existência da independência seja suficientemente forte</li>
+</ul></li>
+<li>Por exemplo, um requisito fundamental do esquema criptográfico de
+chave pública RSA é a capacidade de gerar números primos
+<ul>
+<li>Em geral, é difícil determinar se um número grande N dado é primo.
+Uma abordagem de força bruta seria dividir N por todo ímpar inteiro
+menor do que
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1133em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9267em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span><span style="top:-2.8867em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1133em;"><span></span></span></span></span></span></span></span></span></li>
+<li>Se N for da ordem de, digamos,
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>N</mi><mn>150</mn></msup></mrow><annotation encoding="application/x-tex">N^{150}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">150</span></span></span></span></span></span></span></span></span></span></span></span>,
+ocorrência que não é incomum em criptografia de chave pública, tal
+abordagem de força bruta está além do alcance de analistas humanos e de
+seus computadores.</li>
+<li>Se a sequência for longa o suficiente (mas muito, muito menor que
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><msup><mi>N</mi><mn>150</mn></msup></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{N^{150}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.0849em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9551em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">150</span></span></span></span></span></span></span></span></span></span></span><span style="top:-2.9151em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.0849em;"><span></span></span></span></span></span></span></span></span>)
+a primalidade de um número pode ser determinada com <em>quase total
+certeza</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="aleatório-versus-pseudoaleatório" class="slide level2">
+<h2>Aleatório versus pseudoaleatório</h2>
+<ul>
+<li>Em aplicações como autenticação mútua e geração de chaves de sessão,
+o requisito não é tanto que a sequência de números seja estatisticamente
+aleatória, mas que os membros sucessivos da sequência sejam
+<strong>imprevisíveis</strong></li>
+<li>Com sequências “verdadeiramente” aleatórias, cada número é
+estatisticamente independente de outros números na sequência e, por
+conseguinte, imprevisível</li>
+<li>números aleatórios verdadeiros nem sempre são usados; em vez disso,
+sequências de números que parecem ser aleatórias são geradas por algum
+algoritmo
+<ul>
+<li>Neste último caso, deve-se tomar cuidado para que um oponente não
+consiga prever elementos futuros da sequência com base em elementos
+anteriores</li>
+</ul></li>
+<li>algoritmos determinísticos produzem sequências de números que não
+são estatisticamente aleatórios
+<ul>
+<li>Todavia, se o algoritmo for bom, as sequências resultantes passarão
+em muitos testes razoáveis de aleatoriedade</li>
+</ul></li>
+<li>Tais números são denominados números
+<strong>pseudoaleatórios</strong></li>
+</ul>
+</section>
+<section id="filosofando-sobre-números-pseudoaleatórios" class="slide level2">
+<h2>Filosofando sobre números pseudoaleatórios</h2>
+<p>De acordo com HAMM91:</p>
+<blockquote>
+<p>Para finalidades práticas somos forçados a aceitar o conceito
+esquisito de “relativamente aleatórios” significando que, com relação ao
+uso proposto, não podemos ver qualquer razão por que eles não
+funcionariam como se fossem aleatórios (como a teoria usualmente
+requer). Isso é altamente subjetivo e não muito palatável para os
+puristas, mas é um argumento ao qual os estatísticos regularmente apelam
+quando tomam “uma amostra aleatória” — eles esperam que quaisquer
+resultados que usarem terão aproximadamente as mesmas propriedades de
+uma contagem completa do espaço total da amostra que ocorre em sua
+teoria.</p>
+</blockquote>
+</section>
+<section id="números-verdadeiramente-aleatórios" class="slide level2">
+<h2>Números verdadeiramente aleatórios</h2>
+<ul>
+<li>Um gerador de números verdadeiramente aleatórios (<em>True Random
+Number Generator — TRNG</em>) usa uma fonte não determinística para
+produzir aleatoriedade</li>
+<li>A maioria opera medindo processos naturais imprevisíveis, como
+detectores de pulso de eventos de radiação ionizantes, tubos de descarga
+de gás e capacitores com fuga de fluxo</li>
+<li>A Intel desenvolveu um chip disponível comercialmente que toma
+amostras de ruído térmico amplificando a voltagem medida entre
+resistores não acionados</li>
+<li>Um grupo do Bell Labs desenvolveu uma técnica que usa as variações
+no tempo de resposta de solicitações de leitura de um setor de disco de
+um disco rígido</li>
+<li>LavaRnd é um projeto de código-fonte aberto para criar números
+verdadeiramente aleatórios usando câmeras baratas, código-fonte aberto e
+hardware barato. O sistema usa um dispositivo de carga acoplada saturado
+(CDD) dentro de uma lata hermeticamente fechada (à prova de luz) como
+fonte caótica para produzir aleatoriedade</li>
 </ul>
 </section></section>
 <section>

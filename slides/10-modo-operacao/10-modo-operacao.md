@@ -1,7 +1,7 @@
 ---
 author: Igor Machado Coelho
 title: Segurança da Informação
-subtitle: Modos de Operação para Cifras Criptográficas
+subtitle: Modos de Operação e Aleatoriedade
 date: 10/06/2024--19/06/2024
 transition: cube
 fontsize: 10
@@ -10,7 +10,7 @@ header-includes:
 - <link rel="stylesheet" type="text/css" href="reveal-beamer.css">
 ---
 
-# Módulo: Modos de Operação para Cifras Criptográficas
+# Módulo: Modos de Operação e Aleatoriedade
 
 ------
 
@@ -240,6 +240,109 @@ correspondente.
 - Leia mais em: https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation
 
 
+# Aleatoriedade
+   
+## Números aleatórios e pseudoaleatórios
+
+- Números aleatórios desempenham importante papel na utilização de criptografia
+para várias aplicações de segurança de rede
+- Geração de chaves para o algoritmo criptográfico
+- Geração de um fluxo de chaves para uma cifra de fluxo simétrica
+- Geração de uma chave simétrica para uso como chave de sessão temporária
+ou na criação de um envelope digital (a ver)
+- Essas aplicações dão origem a dois requisitos distintos e não necessariamente
+compatíveis para uma sequência de números aleatórios: **aleatoriedade** e
+**imprevisibilidade**
+
+## Aleatoriedade
+- Tradicionalmente, a preocupação na geração de uma sequência de números
+alegadamente aleatórios é que a sequência de números seja aleatória em algum
+sentido estatístico bem definido. 
+- Dois critérios são usados para
+validar que uma sequência de números é aleatória: **distribuição uniforme** e **independência**
+- No contexto da nossa discussão, a utilização de uma sequência de números
+que *parecem estatisticamente aleatórios* ocorre frequentemente no projeto de
+algoritmos relacionados à criptografia
+
+### Distribuição uniforme
+A distribuição de números na sequência deve ser
+uniforme, isto é, a frequência de ocorrência de cada um dos números deve
+ser aproximadamente a mesma.
+
+### Independência
+Nenhum valor na sequência pode ser inferido dos outros.
+
+## Desafios Práticos de Aleatoriedade
+
+- Existem testes bem definidos para determinar se uma sequência de
+números corresponde a uma distribuição particular, como a distribuição
+uniforme, mas não há teste para "provar" independência 
+   * Em vez disso, diversos testes podem ser aplicados para demonstrar se a sequência
+**não** exibe independência
+   * A estratégia geral é aplicar vários desses testes até que
+a confiança na existência da independência seja suficientemente forte
+-  Por exemplo, um requisito fundamental
+do esquema criptográfico de chave pública RSA é a capacidade de gerar
+números primos
+   * Em geral, é difícil determinar se um número grande N dado é
+primo. Uma abordagem de força bruta seria dividir N por todo ímpar inteiro
+menor do que $\sqrt{N}$
+   * Se N for da ordem de, digamos, $N^{150}$, ocorrência que não é
+incomum em criptografia de chave pública, tal abordagem de força bruta está
+além do alcance de analistas humanos e de seus computadores.
+   * Se a sequência for longa o suficiente (mas muito, muito
+menor que $\sqrt{N^{150}}$) a primalidade de um número pode ser determinada com
+*quase total certeza*
+
+## Aleatório versus pseudoaleatório
+
+- Em aplicações como autenticação mútua e geração de chaves de sessão, o
+requisito não é tanto que a sequência de números seja estatisticamente aleatória,
+mas que os membros sucessivos da sequência sejam **imprevisíveis**
+- Com sequências "verdadeiramente" aleatórias, cada número é estatisticamente
+independente de outros números na sequência e, por conseguinte, imprevisível
+- números aleatórios verdadeiros nem
+sempre são usados; em vez disso, sequências de números que parecem ser
+aleatórias são geradas por algum algoritmo
+   * Neste último caso, deve-se tomar
+cuidado para que um oponente não consiga prever elementos futuros da
+sequência com base em elementos anteriores
+- algoritmos determinísticos produzem sequências de números que não são estatisticamente aleatórios
+   * Todavia, se o algoritmo for bom, as sequências resultantes passarão em muitos
+testes razoáveis de aleatoriedade
+- Tais números são denominados números **pseudoaleatórios**
+
+## Filosofando sobre números pseudoaleatórios
+
+De acordo com HAMM91:
+
+> Para finalidades práticas somos forçados a aceitar o conceito esquisito de
+   “relativamente aleatórios” significando que, com relação ao uso proposto,
+   não podemos ver qualquer razão por que eles não funcionariam como se
+   fossem aleatórios (como a teoria usualmente requer). Isso é altamente
+   subjetivo e não muito palatável para os puristas, mas é um argumento ao
+   qual os estatísticos regularmente apelam quando tomam "uma amostra
+   aleatória" — eles esperam que quaisquer resultados que usarem terão
+   aproximadamente as mesmas propriedades de uma contagem completa do
+   espaço total da amostra que ocorre em sua teoria.
+
+## Números verdadeiramente aleatórios
+
+- Um gerador de números verdadeiramente aleatórios (*True Random Number Generator — TRNG*) usa uma fonte não determinística para produzir aleatoriedade
+- A maioria opera medindo processos naturais imprevisíveis, como
+detectores de pulso de eventos de radiação ionizantes, tubos de descarga de gás e
+capacitores com fuga de fluxo
+- A Intel desenvolveu um chip disponível
+comercialmente que toma amostras de ruído térmico amplificando a voltagem
+medida entre resistores não acionados
+-  Um grupo do Bell Labs
+desenvolveu uma técnica que usa as variações no tempo de resposta de
+solicitações de leitura de um setor de disco de um disco rígido
+-  LavaRnd é um projeto de código-fonte aberto para criar números
+verdadeiramente aleatórios usando câmeras baratas, código-fonte aberto e
+hardware barato. O sistema usa um dispositivo de carga acoplada saturado
+(CDD) dentro de uma lata hermeticamente fechada (à prova de luz) como fonte
+caótica para produzir aleatoriedade
 
 # Discussão
 
