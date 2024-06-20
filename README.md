@@ -18,7 +18,11 @@ Materiais PDF-HTML:
 6. [Propagação de Malware por Engenharia Social e Carga Útil](slides/6-social/6-social.md): [PDF](slides/6-social/6-social.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/6-social/index.html)
 7. [Contramedidas para Malware](slides/7-contramedidas/7-contramedidas.md): [PDF](slides/7-contramedidas/7-contramedidas.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/7-contramedidas/index.html)
 8. [Negação de Serviço](slides/8-negacao-servico/8-negacao-servico.md): [PDF](slides/8-negacao-servico/8-negacao-servico.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/8-negacao-servico/index.html)
-9. [Criptografia](slides/9-criptografia/9-criptografia.md): [PDF](slides/9-criptografia/9-criptografia.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/9-criptografia/index.html)
+9. [Criptografia Simétrica](slides/9-criptografia/9-criptografia.md): [PDF](slides/9-criptografia/9-criptografia.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/9-criptografia/index.html)
+10. [Modos de Operação](slides/10-modo-operacao/10-modo-operacao.md): [PDF](slides/10-modo-operacao/10-modo-operacao.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/10-modo-operacao/index.html)
+11. [Hash e Autenticação de Mensagens](slides/11-autenticacao-hash/11-autenticacao-hash.md): [PDF](slides/11-autenticacao-hash/11-autenticacao-hash.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/11-autenticacao-hash/index.html)
+12. [Criptografia de Chave Pública](slides/12-chave-publica/12-chave-publica.md): [PDF](slides/12-chave-publica/12-chave-publica.pdf) [Online](https://igormcoelho.github.io/curso-seguranca-informacao/slides/12-chave-publica/index.html)
+
 
 
 ***Observação:*** **alguns módulos só são oferecidos para cursos específicos.*
